@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.active-team-box {
+    bottom: 0;
+}
+
+.active.ant-card-bordered {
+    border: 3px solid #1677ff;
+}
+
+.ant-card .ant-card-body {
+    padding: 10px;
+}
