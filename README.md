@@ -74,6 +74,10 @@
    npm run tauri
    ```
 
+## 在线预览
+
+查看 在线预览 体验 [snap-yy](https://xc.liuchang.plus) 的功能。
+
 ## 配置
 
 ### Node.js 版本
