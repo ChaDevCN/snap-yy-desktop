@@ -119,7 +119,7 @@ const Material = () => {
                 <Splitter.Panel size={splitterSize[0]}>
                     <div
                         onPaste={(e) => handlePaste(e, 1)}
-                        className="flex flex-col justify-start h-full border-1 border-r-green-50"
+                        className="flex flex-col justify-start h-full "
                     >
                         <Divider title={"麦序池"} />
                         {components &&

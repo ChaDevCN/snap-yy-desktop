@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Form, Input, InputNumber, Row, Col } from "antd";
+import { Button, Card, Form, Input, InputNumber, Row, Col, message } from "antd";
 import dayjs from "dayjs";
 import { v4 as uuidv4 } from "uuid";
 import { useComponents, useUI } from "@/store";
@@ -54,6 +54,11 @@ const Setting = () => {
         count: number
     ): number[] => {
         const uniqueNumbers = new Set<number>();
+        const range = Array.from({ length: max - min + 1 }, (_, i) => i + min);
+        if (count > range.length) {
+            message.error(`无法生成 ${count} 个唯一的数，因为范围 ${min} - ${max} 只有 ${range.length} 个数字`)
+            throw new Error(`无法生成 ${count} 个唯一的数，因为范围 ${min} - ${max} 只有 ${range.length} 个数字`);
+        }
         while (uniqueNumbers.size < count) {
             const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
             uniqueNumbers.add(randomNum);
