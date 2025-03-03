@@ -65,7 +65,8 @@ const Material = () => {
         tag: Tag
     ) => {
         const items = event.clipboardData?.items;
-
+        console.log(items,'****');
+        
         if (items) {
             for (const item of items) {
                 if (item.type.startsWith("image/")) {
@@ -75,6 +76,8 @@ const Material = () => {
                         if (tag === 1) {
                             setRootIamgeUrl(url);
                             extractTextRegionsFromImage(url, (urls: string[]) => {
+                                console.log(urls);
+                                
                                 urls.forEach((imageurl) => {
                                     const uuid = uuidv4();
                                     addComponents({
